@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  body {
+    background-color: #F8F5EA;
+    color: #124734;
+    overflow-x: hidden;
+    touch-action: manipulation;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F5EA;
+}
+::-webkit-scrollbar-thumb {
+  background: #2c7358;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #124734;
+}
+
+/* Hide scrollbars for mobile horizontal touch strips */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* iOS Safe Area Utilities */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 1rem);
+}
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 1rem);
+}
+
+/* Glassmorphism utility */
+.glass-nav {
+  background: rgba(248, 245, 234, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark-glass-nav {
+  background: rgba(18, 71, 52, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
